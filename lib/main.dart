@@ -13,7 +13,7 @@ class FoodDelivery extends StatelessWidget {
         primaryColor: Colors.deepOrangeAccent,
         scaffoldBackgroundColor: Colors.grey[100],
       ),
-      home: HomeScreen(),
+      home: HomeScreen(title: "Food Delivery"),
     );
   }
 }
