@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_ui/screens/homeScreen.dart';
 
 void main() => runApp(FoodDelivery());
 
@@ -8,7 +9,11 @@ class FoodDelivery extends StatelessWidget {
     return MaterialApp(
       title: 'Food Delivery App UI',
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      theme: ThemeData(
+        primaryColor: Colors.deepOrangeAccent,
+        scaffoldBackgroundColor: Colors.grey[100],
+      ),
+      home: HomeScreen(),
     );
   }
 }
