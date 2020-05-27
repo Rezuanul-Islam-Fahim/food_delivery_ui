@@ -11,9 +11,9 @@ class FoodDelivery extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.deepOrangeAccent,
-        scaffoldBackgroundColor: Colors.grey[100],
+        scaffoldBackgroundColor: Colors.grey[200],
       ),
-      home: HomeScreen(title: "Food Delivery"),
+      home: HomeScreen(title: 'Food Delivery'),
     );
   }
 }
