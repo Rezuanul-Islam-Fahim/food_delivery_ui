@@ -88,7 +88,7 @@ final Restaurant _restaurant1 = Restaurant(
 );
 
 final Restaurant _restaurant2 = Restaurant(
-  imgUrl: 'assets/images/restaurant0.jpg',
+  imgUrl: 'assets/images/restaurant2.jpg',
   name: 'Ishti Kutum',
   rating: 3,
   address: '104, Gourango Bazar',
@@ -106,7 +106,7 @@ final Restaurant _restaurant2 = Restaurant(
 );
 
 final Restaurant _restaurant3 = Restaurant(
-  imgUrl: 'assets/images/restaurant0.jpg',
+  imgUrl: 'assets/images/restaurant3.jpg',
   name: 'Gangchil',
   rating: 2,
   address: '983, Ishakha Road, Rothkhola',
@@ -124,7 +124,7 @@ final Restaurant _restaurant3 = Restaurant(
 );
 
 final Restaurant _restaurant4 = Restaurant(
-  imgUrl: 'assets/images/restaurant0.jpg',
+  imgUrl: 'assets/images/restaurant4.jpg',
   name: 'Mak Taste Shop',
   rating: 5,
   address: '343, Hossainpur Road, Nogua',
