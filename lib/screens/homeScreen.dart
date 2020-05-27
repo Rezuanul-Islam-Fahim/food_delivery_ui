@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_ui/data.dart';
 
 class HomeScreen extends StatefulWidget {
   final String title;
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: <Widget>[
           FlatButton(
             child: Text(
-              'Cart (5)',
+              'Cart (${user.cart.length})',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 19,
