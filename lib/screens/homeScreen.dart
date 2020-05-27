@@ -16,11 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Container(
-          padding: EdgeInsets.only(left: 64.0),
-          child: Text(
-            widget.title,
-            textAlign: TextAlign.center,
-          ),
+          alignment: Alignment.center,
+          padding: EdgeInsets.only(left: 40.0),
+          child: Text(widget.title),
         ),
         leading: IconButton(
           icon: Icon(Icons.account_circle),
@@ -40,7 +38,40 @@ class _HomeScreenState extends State<HomeScreen> {
               borderRadius: BorderRadius.circular(30.0),
             ),
             onPressed: () {},
-            splashColor: Colors.white30,
+            splashColor: Colors.white38,
+          ),
+        ],
+      ),
+      body: ListView(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(20.0),
+            child: TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                ),
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                  borderSide: BorderSide(width: 0.8),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                  borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor,
+                    width: 0.9,
+                  ),
+                ),
+                prefixIcon: Icon(Icons.search, size: 25.0),
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.clear),
+                  onPressed: () {},
+                ),
+                hintText: 'Search Food or Restaurant',
+              ),
+            ),
           ),
         ],
       ),
