@@ -15,7 +15,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Container(
+          padding: EdgeInsets.only(left: 64.0),
+          child: Text(
+            widget.title,
+            textAlign: TextAlign.center,
+          ),
+        ),
         leading: IconButton(
           icon: Icon(Icons.account_circle),
           iconSize: 30.0,
@@ -27,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
               'Cart (${user.cart.length})',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 19,
+                fontSize: 18,
               ),
             ),
             shape: RoundedRectangleBorder(
