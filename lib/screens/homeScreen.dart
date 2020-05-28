@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(20.0),
+              borderRadius: BorderRadius.circular(15.0),
               border: Border.all(
                 color: Colors.grey[300],
                 width: 0.8,
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       image: AssetImage(restaurant.imgUrl),
                       fit: BoxFit.cover,
                     ),
-                    borderRadius: BorderRadius.circular(20.0),
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
                 ),
                 Expanded(

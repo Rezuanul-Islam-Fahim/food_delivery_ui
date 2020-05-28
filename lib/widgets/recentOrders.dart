@@ -9,7 +9,7 @@ class RecentOrders extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(45.0),
         border: Border.all(
           color: Colors.grey[300],
           width: 0.8,
@@ -22,7 +22,7 @@ class RecentOrders extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(45.0),
                   child: Image(
                     width: 100.0,
                     height: 100.0,
