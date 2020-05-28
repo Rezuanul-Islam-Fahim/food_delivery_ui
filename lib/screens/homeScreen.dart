@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => RestaurantScreen(),
+              builder: (_) => RestaurantScreen(restaurant),
             ),
           ),
           child: Container(
@@ -38,15 +38,16 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: EdgeInsets.symmetric(vertical: 10),
             child: Row(
               children: <Widget>[
-                Container(
-                  width: 130.0,
-                  height: 130.0,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Hero(
+                    tag: restaurant.name,
+                    child: Image(
                       image: AssetImage(restaurant.imgUrl),
+                      width: 130.0,
+                      height: 130.0,
                       fit: BoxFit.cover,
                     ),
-                    borderRadius: BorderRadius.circular(15.0),
                   ),
                 ),
                 Expanded(
