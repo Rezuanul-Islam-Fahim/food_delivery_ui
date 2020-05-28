@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_ui/data.dart';
+import 'package:food_delivery_ui/screens/restaurantScreen.dart';
 import 'package:food_delivery_ui/widgets/recentOrders.dart';
 import 'package:food_delivery_ui/widgets/ratingStars.dart';
 import 'package:food_delivery_ui/models/restaurant.dart';
@@ -18,70 +19,78 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Widget> restaurantList = [];
     restaurants.forEach((Restaurant restaurant) {
       restaurantList.add(
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20.0),
-            border: Border.all(
-              color: Colors.grey[300],
-              width: 0.8,
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => RestaurantScreen(),
             ),
           ),
-          margin: EdgeInsets.symmetric(vertical: 10),
-          child: Row(
-            children: <Widget>[
-              Container(
-                width: 130.0,
-                height: 130.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(restaurant.imgUrl),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20.0),
+              border: Border.all(
+                color: Colors.grey[300],
+                width: 0.8,
               ),
-              Expanded(
-                child: Container(
-                  padding: EdgeInsets.all(15.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        restaurant.name,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(height: 6.0),
-                      RatingStars(restaurant.rating),
-                      SizedBox(height: 6.0),
-                      Text(
-                        restaurant.address,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(height: 6.0),
-                      Text(
-                        '${restaurant.distance} miles away',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.grey[700],
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
+            ),
+            margin: EdgeInsets.symmetric(vertical: 10),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  width: 130.0,
+                  height: 130.0,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(restaurant.imgUrl),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
-              ),
-            ],
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.all(15.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          restaurant.name,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 6.0),
+                        RatingStars(restaurant.rating),
+                        SizedBox(height: 6.0),
+                        Text(
+                          restaurant.address,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 6.0),
+                        Text(
+                          '${restaurant.distance} miles away',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.grey[700],
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );
