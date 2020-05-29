@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_ui/models/restaurant.dart';
+import 'package:food_delivery_ui/models/food.dart';
 import 'package:food_delivery_ui/widgets/ratingStars.dart';
 
 class RestaurantScreen extends StatefulWidget {
@@ -12,6 +13,28 @@ class RestaurantScreen extends StatefulWidget {
 }
 
 class _RestaurantScreenState extends State<RestaurantScreen> {
+  _buildMenuItems(Food menuItem) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 20, left: 10, right: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      child: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0),
+              image: DecorationImage(
+                image: AssetImage(menuItem.imgUrl),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,6 +158,21 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   ),
                 ),
               ],
+            ),
+          ),
+          Text(
+            'Our Menus',
+            style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 2.0),
+          Expanded(
+            child: GridView.count(
+              padding: EdgeInsets.only(left: 10, right: 10, top: 8.0),
+              crossAxisCount: 2,
+              children:
+                  List.generate(widget.restaurant.foods.length, (int index) {
+                return _buildMenuItems(widget.restaurant.foods[index]);
+              }),
             ),
           ),
         ],
