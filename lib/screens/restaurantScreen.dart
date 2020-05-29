@@ -52,6 +52,22 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               ),
             ],
           ),
+          Positioned(
+            right: 10.0,
+            bottom: 10.0,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              child: IconButton(
+                icon: Icon(Icons.add),
+                color: Colors.white,
+                iconSize: 30.0,
+                onPressed: () {},
+              ),
+            ),
+          ),
         ],
       ),
     );
