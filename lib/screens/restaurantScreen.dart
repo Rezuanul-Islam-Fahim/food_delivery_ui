@@ -20,6 +20,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
         borderRadius: BorderRadius.circular(15.0),
       ),
       child: Stack(
+        alignment: Alignment.center,
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
@@ -29,6 +30,27 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 fit: BoxFit.cover,
               ),
             ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                menuItem.name,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                '\$${menuItem.price}',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+            ],
           ),
         ],
       ),
