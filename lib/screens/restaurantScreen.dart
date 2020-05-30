@@ -58,6 +58,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   color: Colors.white,
                 ),
               ),
+              SizedBox(height: 6.0),
               Text(
                 '\$${menuItem.price}',
                 style: TextStyle(
