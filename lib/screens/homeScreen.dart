@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_ui/data.dart';
 import 'package:food_delivery_ui/screens/restaurantScreen.dart';
+import 'package:food_delivery_ui/screens/cartScreen.dart';
 import 'package:food_delivery_ui/widgets/recentOrders.dart';
 import 'package:food_delivery_ui/widgets/ratingStars.dart';
 import 'package:food_delivery_ui/models/restaurant.dart';
@@ -125,7 +126,12 @@ class _HomeScreenState extends State<HomeScreen> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),
             ),
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => CartScreen(),
+              ),
+            ),
             splashColor: Colors.white38,
           ),
         ],
