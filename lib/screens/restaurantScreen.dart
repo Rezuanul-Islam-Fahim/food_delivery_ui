@@ -31,6 +31,22 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               ),
             ),
           ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  Colors.black87,
+                  Colors.black54,
+                  Colors.black54,
+                  Colors.black54,
+                ],
+                stops: [0.2, 0.5, 0.6, 0.8],
+              ),
+            ),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
