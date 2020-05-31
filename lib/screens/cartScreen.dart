@@ -10,8 +10,6 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  int totalCost = 0;
-
   _buildCartItem(Order cartItem) {
     return Container(
       margin: EdgeInsets.all(20),
@@ -122,13 +120,68 @@ class _CartScreenState extends State<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double totalCost = 0;
+
+    user.cart.forEach((Order cartItem) {
+      totalCost += cartItem.food.price * cartItem.quantity;
+    });
+
     return Scaffold(
       appBar: AppBar(title: Text('Cart (${user.cart.length})')),
       body: ListView.separated(
-        itemCount: user.cart.length,
+        itemCount: user.cart.length + 1,
         itemBuilder: (BuildContext context, int index) {
-          Order cartItem = user.cart[index];
-          return _buildCartItem(cartItem);
+          if (index < user.cart.length) {
+            Order cartItem = user.cart[index];
+            return _buildCartItem(cartItem);
+          }
+          return Container(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Estimated Delivery Time',
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '25 min',
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 8.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Total Cost',
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '\$$totalCost',
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green[400],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
         },
         separatorBuilder: (BuildContext context, int index) {
           return Divider(
