@@ -179,6 +179,7 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ],
                 ),
+                SizedBox(height: 75.0),
               ],
             ),
           );
@@ -189,6 +190,33 @@ class _CartScreenState extends State<CartScreen> {
             color: Colors.black26,
           );
         },
+      ),
+      bottomSheet: GestureDetector(
+        onTap: () {},
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.all(23.0),
+          decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor,
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: Colors.black38,
+                blurRadius: 5.5,
+                spreadRadius: 0.6,
+                offset: Offset(0, -1),
+              ),
+            ],
+          ),
+          child: Text(
+            'Checkout',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
       ),
     );
   }
