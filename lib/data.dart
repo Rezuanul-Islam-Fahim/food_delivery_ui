@@ -182,32 +182,37 @@ final User user = User(
     Order(
       food: _pancake,
       restaurant: _restaurant2,
-      date: '24 May, 2020',
+      quantity: 2,
     ),
     Order(
       food: _burger,
       restaurant: _restaurant1,
       date: '20 May, 2020',
+      quantity: 4,
     ),
     Order(
       food: _burrito,
       restaurant: _restaurant3,
       date: '18 May, 2020',
+      quantity: 3,
     ),
     Order(
       food: _steak,
       restaurant: _restaurant4,
       date: '12 May, 2020',
+      quantity: 1,
     ),
     Order(
       food: _pasta,
       restaurant: _restaurant0,
       date: '10 May, 2020',
+      quantity: 4,
     ),
     Order(
       food: _salmon,
       restaurant: _restaurant1,
       date: '10 May, 2020',
+      quantity: 3,
     ),
   ],
 );
