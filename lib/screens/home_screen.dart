@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_ui/data.dart';
-import 'package:food_delivery_ui/screens/restaurantScreen.dart';
-import 'package:food_delivery_ui/screens/cartScreen.dart';
-import 'package:food_delivery_ui/widgets/recentOrders.dart';
-import 'package:food_delivery_ui/widgets/ratingStars.dart';
+import 'package:food_delivery_ui/screens/restaurant_screen.dart';
+import 'package:food_delivery_ui/screens/cart_screen.dart';
+import 'package:food_delivery_ui/widgets/recent_orders.dart';
+import 'package:food_delivery_ui/widgets/rating_stars.dart';
 import 'package:food_delivery_ui/models/restaurant.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_ui/models/restaurant.dart';
 import 'package:food_delivery_ui/models/food.dart';
-import 'package:food_delivery_ui/widgets/ratingStars.dart';
+import 'package:food_delivery_ui/widgets/rating_stars.dart';
 
 class RestaurantScreen extends StatefulWidget {
   final Restaurant restaurant;

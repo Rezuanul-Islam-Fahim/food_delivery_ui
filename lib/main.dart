@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_ui/screens/homeScreen.dart';
+import 'package:food_delivery_ui/screens/home_screen.dart';
 
 void main() => runApp(FoodDelivery());
 
