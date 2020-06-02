@@ -31,7 +31,7 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 10.0),
+                SizedBox(width: 15.0),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -144,7 +144,7 @@ class _CartScreenState extends State<CartScreen> {
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        'Estimated Delivery Time' + '43 65 76 fg df sd',
+                        'Estimated Delivery Time',
                         style: TextStyle(
                           fontSize: 19,
                           fontWeight: FontWeight.bold,
