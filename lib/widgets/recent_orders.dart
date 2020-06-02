@@ -3,7 +3,45 @@ import 'package:food_delivery_ui/data.dart';
 import 'package:food_delivery_ui/models/order.dart';
 
 class RecentOrders extends StatelessWidget {
-  _buildRecentOrders(BuildContext context, Order order, double containerWidth) {
+  @override
+  Widget build(BuildContext context) {
+    final bool isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+
+    final double orderContSizePortrait = 0.8;
+    final double orderContSizeLandscape = 0.6;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.only(left: 20, bottom: 10.0),
+          child: Text(
+            'Recent Orders',
+            style: TextStyle(
+              fontSize: 21,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.1,
+            ),
+          ),
+        ),
+        Container(
+          height: 100.0,
+          child: isLandscape
+              ? RecentOrderList(orderContSizeLandscape)
+              : RecentOrderList(orderContSizePortrait),
+        ),
+      ],
+    );
+  }
+}
+
+class RecentOrderList extends StatelessWidget {
+  final double containerWidth;
+
+  RecentOrderList(this.containerWidth);
+
+  _buildRecentOrders(BuildContext context, Order order) {
     return Container(
       width: MediaQuery.of(context).size.width * containerWidth,
       margin: EdgeInsets.symmetric(horizontal: 10),
@@ -91,57 +129,14 @@ class RecentOrders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLandscape =
-        MediaQuery.of(context).orientation == Orientation.landscape;
-
-    final double orderContSizePortrait = 0.8;
-    final double orderContSizeLandscape = 0.6;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: EdgeInsets.only(left: 20, bottom: 10.0),
-          child: Text(
-            'Recent Orders',
-            style: TextStyle(
-              fontSize: 21,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 1.1,
-            ),
-          ),
-        ),
-        Container(
-          height: 100.0,
-          child: isLandscape
-              ? ListView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: user.recentOrders.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    Order order = user.recentOrders[index];
-                    return _buildRecentOrders(
-                      context,
-                      order,
-                      orderContSizeLandscape,
-                    );
-                  },
-                )
-              : ListView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: user.recentOrders.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    Order order = user.recentOrders[index];
-                    return _buildRecentOrders(
-                      context,
-                      order,
-                      orderContSizePortrait,
-                    );
-                  },
-                ),
-        ),
-      ],
+    return ListView.builder(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      scrollDirection: Axis.horizontal,
+      itemCount: user.recentOrders.length,
+      itemBuilder: (BuildContext context, int index) {
+        Order order = user.recentOrders[index];
+        return _buildRecentOrders(context, order);
+      },
     );
   }
 }
