@@ -106,7 +106,9 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Container(
           alignment: Alignment.center,
-          padding: EdgeInsets.only(left: 40.0),
+          padding: EdgeInsets.only(
+            left: MediaQuery.of(context).size.width * 0.1,
+          ),
           child: Text(widget.title),
         ),
         leading: IconButton(
