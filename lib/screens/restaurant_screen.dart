@@ -92,20 +92,19 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+    final double stackHeightLandscape = 0.65;
+    final double stackHeightPortrait = 0.4;
+
     return Scaffold(
       body: Column(
         children: <Widget>[
           Stack(
             children: <Widget>[
-              Hero(
-                tag: widget.restaurant.name,
-                child: Image(
-                  image: AssetImage(widget.restaurant.imgUrl),
-                  height: 240.0,
-                  width: MediaQuery.of(context).size.width,
-                  fit: BoxFit.cover,
-                ),
-              ),
+              isLandscape
+                  ? HeroImage(widget.restaurant, stackHeightLandscape)
+                  : HeroImage(widget.restaurant, stackHeightPortrait),
               Container(
                 padding: EdgeInsets.symmetric(
                   vertical: 30.0,
@@ -231,6 +230,26 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class HeroImage extends StatelessWidget {
+  final Restaurant restaurant;
+  final double stackHeight;
+
+  HeroImage(this.restaurant, this.stackHeight);
+
+  @override
+  Widget build(BuildContext context) {
+    return Hero(
+      tag: restaurant.name,
+      child: Image(
+        image: AssetImage(restaurant.imgUrl),
+        height: MediaQuery.of(context).size.height * stackHeight - 50.0,
+        width: MediaQuery.of(context).size.width,
+        fit: BoxFit.cover,
       ),
     );
   }
