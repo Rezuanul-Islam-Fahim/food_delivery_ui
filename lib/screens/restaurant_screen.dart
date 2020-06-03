@@ -245,7 +245,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                       Text(
                         'Our Menus',
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 21,
                           fontWeight: FontWeight.w800,
                           letterSpacing: 1.2,
                         ),
@@ -267,7 +267,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                       Text(
                         'Our Menus',
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 21,
                           fontWeight: FontWeight.w800,
                           letterSpacing: 1.2,
                         ),

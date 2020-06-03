@@ -176,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Text(
               'Restaurants',
               style: TextStyle(
-                fontSize: 22,
+                fontSize: 21,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 1.2,
               ),
