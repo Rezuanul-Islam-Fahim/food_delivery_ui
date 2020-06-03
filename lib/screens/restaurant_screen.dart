@@ -223,10 +223,12 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
             child: GridView.count(
               padding: EdgeInsets.only(left: 10, right: 10, top: 8.0),
               crossAxisCount: 2,
-              children:
-                  List.generate(widget.restaurant.foods.length, (int index) {
-                return _buildMenuItems(widget.restaurant.foods[index]);
-              }),
+              children: List.generate(
+                widget.restaurant.foods.length,
+                (int index) {
+                  return _buildMenuItems(widget.restaurant.foods[index]);
+                },
+              ),
             ),
           ),
         ],
