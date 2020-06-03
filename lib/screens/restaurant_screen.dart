@@ -57,6 +57,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
+                  letterSpacing: 1.1,
                 ),
               ),
               SizedBox(height: 6.0),
@@ -106,9 +107,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
       );
     }
 
-    return Column(
-      children: restaurantItemList,
-    );
+    return Column(children: restaurantItemList);
   }
 
   @override
@@ -131,6 +130,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 style: TextStyle(
                   fontSize: 19,
                   fontWeight: FontWeight.w700,
+                  letterSpacing: 0.9,
                 ),
               ),
               Text(
@@ -226,7 +226,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     ),
                     IconButton(
                       icon: Icon(Icons.favorite),
-                      iconSize: 30.0,
+                      iconSize: 35.0,
                       color: Theme.of(context).primaryColor,
                       onPressed: () {},
                     ),
@@ -245,8 +245,9 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                       Text(
                         'Our Menus',
                         style: TextStyle(
-                          fontSize: 19,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w800,
+                          letterSpacing: 1.2,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -266,8 +267,9 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                       Text(
                         'Our Menus',
                         style: TextStyle(
-                          fontSize: 19,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w800,
+                          letterSpacing: 1.2,
                         ),
                       ),
                       SizedBox(height: 2.0),

@@ -52,6 +52,7 @@ class MenuItemsLandscape extends StatelessWidget {
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
+                  letterSpacing: 1.1,
                 ),
               ),
               SizedBox(height: 6.0),

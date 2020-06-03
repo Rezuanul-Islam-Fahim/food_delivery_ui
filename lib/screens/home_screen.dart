@@ -63,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w700,
+                            letterSpacing: 0.9,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -175,9 +176,9 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Text(
               'Restaurants',
               style: TextStyle(
-                fontSize: 21,
+                fontSize: 22,
                 fontWeight: FontWeight.w700,
-                letterSpacing: 1.1,
+                letterSpacing: 1.2,
               ),
             ),
           ),

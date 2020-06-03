@@ -42,6 +42,7 @@ class _CartScreenState extends State<CartScreen> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
+                          letterSpacing: 0.9,
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
