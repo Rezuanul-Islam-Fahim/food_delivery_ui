@@ -128,7 +128,10 @@ class _CartScreenState extends State<CartScreen> {
     });
 
     return Scaffold(
-      appBar: AppBar(title: Text('Cart (${user.cart.length})')),
+      appBar: AppBar(
+        title: Text('Cart (${user.cart.length})'),
+        brightness: Brightness.dark,
+      ),
       body: ListView.separated(
         itemCount: user.cart.length + 1,
         itemBuilder: (BuildContext context, int index) {
