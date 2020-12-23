@@ -105,13 +105,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * 0.1,
-          ),
-          child: Text(widget.title),
-        ),
+        title: Text(widget.title),
+        centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.account_circle),
           iconSize: 30.0,
@@ -138,6 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
             splashColor: Colors.white38,
           ),
         ],
+        brightness: Brightness.dark,
       ),
       body: ListView(
         children: <Widget>[
