@@ -110,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: IconButton(
           icon: Icon(Icons.account_circle),
           iconSize: 30.0,
+          color: Colors.white,
           onPressed: () {},
         ),
         actions: <Widget>[

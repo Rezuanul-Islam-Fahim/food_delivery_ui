@@ -10,8 +10,16 @@ class FoodDelivery extends StatelessWidget {
       title: 'Food Delivery App UI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.deepOrangeAccent,
+        primarySwatch: Colors.lightGreen,
         scaffoldBackgroundColor: Colors.grey[200],
+        appBarTheme: ThemeData.light().appBarTheme.copyWith(
+              textTheme: ThemeData.light().textTheme.copyWith(
+                    headline6: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+            ),
       ),
       home: HomeScreen(title: 'Food Delivery'),
     );

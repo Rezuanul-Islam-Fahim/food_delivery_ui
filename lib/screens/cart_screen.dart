@@ -130,6 +130,7 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart (${user.cart.length})'),
+        iconTheme: IconThemeData(color: Colors.white),
         brightness: Brightness.dark,
       ),
       body: ListView.separated(

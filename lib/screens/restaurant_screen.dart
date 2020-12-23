@@ -227,7 +227,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     IconButton(
                       icon: Icon(Icons.favorite),
                       iconSize: 35.0,
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.redAccent,
                       onPressed: () {},
                     ),
                   ],
