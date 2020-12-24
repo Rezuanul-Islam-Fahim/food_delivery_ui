@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_ui/models/restaurant.dart';
 import 'package:food_delivery_ui/models/food.dart';
 import 'package:food_delivery_ui/widgets/rating_stars.dart';
-import 'package:food_delivery_ui/widgets/menu_items_landscape.dart';
 
 class RestaurantScreen extends StatefulWidget {
   final Restaurant restaurant;
@@ -14,9 +13,8 @@ class RestaurantScreen extends StatefulWidget {
 }
 
 class _RestaurantScreenState extends State<RestaurantScreen> {
-  _buildMenuItems(Food menuItem) {
+  Widget _buildMenuItems(Food menuItem) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20, left: 10, right: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
       ),
@@ -92,30 +90,12 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
     );
   }
 
-  _buildRestaurantItems(List<Food> foods, bool isLandscape) {
-    final List<Widget> restaurantItemList = [];
-
-    for (int i = 0; i < foods.length; i += 2) {
-      restaurantItemList.add(
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            MenuItemsLandscape(foods[i]),
-            MenuItemsLandscape(foods[i + 1]),
-          ],
-        ),
-      );
-    }
-
-    return Column(children: restaurantItemList);
-  }
-
   @override
   Widget build(BuildContext context) {
-    final isLandscape =
-        MediaQuery.of(context).orientation == Orientation.landscape;
-    final double stackHeightLandscape = 0.65;
-    final double stackHeightPortrait = 0.4;
+    final MediaQueryData mediaQuery = MediaQuery.of(context);
+    final bool isLandscape = mediaQuery.orientation == Orientation.landscape;
+    final double deviceWidth = mediaQuery.size.width;
+    final int menuItem = widget.restaurant.foods.length;
 
     final Widget restaurantDetails = Container(
       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -208,8 +188,8 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           Stack(
             children: <Widget>[
               isLandscape
-                  ? HeroImage(widget.restaurant, stackHeightLandscape)
-                  : HeroImage(widget.restaurant, stackHeightPortrait),
+                  ? HeroImage(widget.restaurant, 0.55)
+                  : HeroImage(widget.restaurant, 0.4),
               Container(
                 padding: EdgeInsets.symmetric(
                   vertical: 30.0,
@@ -235,60 +215,48 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               ),
             ],
           ),
-          isLandscape
-              ? Expanded(
-                  child: ListView(
-                    padding: EdgeInsets.all(0),
-                    children: <Widget>[
-                      SizedBox(height: 20.0),
-                      restaurantDetails,
-                      Text(
-                        'Our Menus',
-                        style: TextStyle(
-                          fontSize: 21,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 1.2,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(height: 10.0),
-                      _buildRestaurantItems(
-                        widget.restaurant.foods,
-                        isLandscape,
-                      ),
-                    ],
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 20.0),
+                  restaurantDetails,
+                  SizedBox(height: 10.0),
+                  Text(
+                    'Our Menus',
+                    style: TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.2,
+                    ),
                   ),
-                )
-              : Container(
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(height: 20.0),
-                      restaurantDetails,
-                      Text(
-                        'Our Menus',
-                        style: TextStyle(
-                          fontSize: 21,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 1.2,
-                        ),
+                  Container(
+                    height: isLandscape
+                        ? (deviceWidth / 2) * (menuItem / 2).ceil() -
+                            (deviceWidth / 2.4)
+                        : (deviceWidth / 2) * (menuItem / 2).ceil() - 35,
+                    padding: EdgeInsets.only(
+                      left: isLandscape ? deviceWidth / 8 : 20,
+                      right: isLandscape ? deviceWidth / 8 : 20,
+                    ),
+                    child: GridView.builder(
+                      padding: EdgeInsets.only(top: 5),
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: menuItem,
+                      itemBuilder: (BuildContext context, int index) {
+                        return _buildMenuItems(widget.restaurant.foods[index]);
+                      },
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 20,
+                        mainAxisSpacing: 20,
                       ),
-                      SizedBox(height: 2.0),
-                    ],
+                    ),
                   ),
-                ),
-          if (!isLandscape)
-            Expanded(
-              child: GridView.count(
-                padding: EdgeInsets.only(left: 10, right: 10, top: 8.0),
-                crossAxisCount: 2,
-                children: List.generate(
-                  widget.restaurant.foods.length,
-                  (int index) {
-                    return _buildMenuItems(widget.restaurant.foods[index]);
-                  },
-                ),
+                ],
               ),
             ),
+          ),
         ],
       ),
     );
