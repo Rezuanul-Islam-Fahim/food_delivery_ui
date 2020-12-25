@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -24,12 +25,31 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-  <title>food_delivery_ui</title>
+  <title>Food Delivery UI</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+  <script>
+    // Web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDRyFDFMfwNleq6dzPLRlf-z8SuOT-ZT50",
+      authDomain: "food-delivery-ui-c1801.firebaseapp.com",
+      projectId: "food-delivery-ui-c1801",
+      storageBucket: "food-delivery-ui-c1801.appspot.com",
+      messagingSenderId: "838059450425",
+      appId: "1:838059450425:web:9d0b40f43abede9342ade8"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -42,4 +62,5 @@
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
+
 </html>
