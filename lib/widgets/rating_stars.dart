@@ -18,7 +18,7 @@ class RatingStars extends StatelessWidget {
     return Text(
       stars,
       style: TextStyle(
-        fontSize: 16,
+        fontSize: 12,
         letterSpacing: 0.8,
       ),
     );

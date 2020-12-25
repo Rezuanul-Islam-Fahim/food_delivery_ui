@@ -12,7 +12,7 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   _buildCartItem(Order cartItem) {
     return Container(
-      margin: EdgeInsets.all(20),
+      margin: EdgeInsets.all(15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,8 +21,8 @@ class _CartScreenState extends State<CartScreen> {
             child: Row(
               children: <Widget>[
                 Container(
-                  width: 130.0,
-                  height: 110.0,
+                  width: 95,
+                  height: 75,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     image: DecorationImage(
@@ -40,29 +40,31 @@ class _CartScreenState extends State<CartScreen> {
                       Text(
                         cartItem.food.name,
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.w700,
                           letterSpacing: 0.9,
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 5.0),
+                      SizedBox(height: 4),
                       Text(
                         cartItem.restaurant.name,
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 13,
                           fontWeight: FontWeight.w600,
+                          color: Colors.black87.withOpacity(0.7),
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 8.0),
+                      SizedBox(height: 7),
                       Container(
-                        width: 100.0,
+                        width: 100,
+                        height: 20,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
+                          borderRadius: BorderRadius.circular(20.0),
                           border: Border.all(
                             width: 0.9,
-                            color: Colors.black38,
+                            color: Colors.black12,
                           ),
                         ),
                         child: Row(
@@ -72,7 +74,7 @@ class _CartScreenState extends State<CartScreen> {
                               child: Text(
                                 '-',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: Theme.of(context).primaryColor,
                                 ),
@@ -82,7 +84,7 @@ class _CartScreenState extends State<CartScreen> {
                               child: Text(
                                 cartItem.quantity.toString(),
                                 style: TextStyle(
-                                  fontSize: 17,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -91,7 +93,7 @@ class _CartScreenState extends State<CartScreen> {
                               child: Text(
                                 '+',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: Theme.of(context).primaryColor,
                                 ),
@@ -106,11 +108,11 @@ class _CartScreenState extends State<CartScreen> {
               ],
             ),
           ),
-          SizedBox(width: 15.0),
+          SizedBox(width: 10),
           Text(
             '\$${cartItem.food.price * cartItem.quantity}',
             style: TextStyle(
-              fontSize: 17,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -141,7 +143,7 @@ class _CartScreenState extends State<CartScreen> {
             return _buildCartItem(cartItem);
           }
           return Container(
-            padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(15),
             child: Column(
               children: <Widget>[
                 Row(
@@ -151,7 +153,7 @@ class _CartScreenState extends State<CartScreen> {
                       child: Text(
                         'Estimated Delivery Time',
                         style: TextStyle(
-                          fontSize: 19,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
                         overflow: TextOverflow.ellipsis,
@@ -160,34 +162,34 @@ class _CartScreenState extends State<CartScreen> {
                     Text(
                       '25 min',
                       style: TextStyle(
-                        fontSize: 19,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 8.0),
+                SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
                       'Total Cost',
                       style: TextStyle(
-                        fontSize: 19,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
                       '\$$totalCost',
                       style: TextStyle(
-                        fontSize: 19,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.green[400],
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 75.0),
+                SizedBox(height: 63),
               ],
             ),
           );
@@ -203,13 +205,13 @@ class _CartScreenState extends State<CartScreen> {
         onTap: () {},
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(23.0),
+          padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
             color: Theme.of(context).primaryColor,
             boxShadow: <BoxShadow>[
               BoxShadow(
-                color: Colors.black38,
-                blurRadius: 5.5,
+                color: Colors.black26,
+                blurRadius: 3.5,
                 spreadRadius: 0.6,
                 offset: Offset(0, -1),
               ),
@@ -218,7 +220,7 @@ class _CartScreenState extends State<CartScreen> {
           child: Text(
             'Checkout',
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 17,
               fontWeight: FontWeight.w700,
               color: Colors.white,
             ),

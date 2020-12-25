@@ -52,7 +52,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               Text(
                 menuItem.name,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
                   letterSpacing: 1.1,
@@ -62,7 +62,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               Text(
                 '\$${menuItem.price}',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 15,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
                 ),
@@ -73,14 +73,17 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
             right: 10.0,
             bottom: 10.0,
             child: Container(
+              width: 40,
+              height: 40,
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: IconButton(
-                icon: Icon(Icons.add),
+                icon: Icon(Icons.add_rounded),
                 color: Colors.white,
-                iconSize: 30.0,
+                padding: EdgeInsets.all(0),
+                iconSize: 25,
                 onPressed: () {},
               ),
             ),
@@ -108,7 +111,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               Text(
                 widget.restaurant.name,
                 style: TextStyle(
-                  fontSize: 19,
+                  fontSize: 16.5,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 0.9,
                 ),
@@ -116,8 +119,9 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               Text(
                 '${widget.restaurant.distance} miles away',
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 14,
                   fontWeight: FontWeight.w600,
+                  color: Colors.black87.withOpacity(0.7),
                 ),
               ),
             ],
@@ -128,7 +132,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           Text(
             widget.restaurant.address,
             style: TextStyle(
-              fontSize: 17,
+              fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -150,7 +154,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     'Reviews',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 14,
                     ),
                   ),
                   splashColor: Colors.white38,
@@ -169,7 +173,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     'Contact Us',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 14,
                     ),
                   ),
                   splashColor: Colors.white38,
@@ -192,14 +196,14 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   : HeroImage(widget.restaurant, 0.4),
               Container(
                 padding: EdgeInsets.symmetric(
-                  vertical: 30.0,
-                  horizontal: 10.0,
+                  vertical: 40.0,
+                  horizontal: 20.0,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.arrow_back_ios),
+                      icon: Icon(Icons.arrow_back_ios_rounded),
                       iconSize: 30.0,
                       color: Colors.white,
                       onPressed: () => Navigator.pop(context),
@@ -225,7 +229,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   Text(
                     'Our Menus',
                     style: TextStyle(
-                      fontSize: 21,
+                      fontSize: 17,
                       fontWeight: FontWeight.w800,
                       letterSpacing: 1.2,
                     ),

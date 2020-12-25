@@ -16,7 +16,7 @@ class FoodDelivery extends StatelessWidget {
               textTheme: ThemeData.light().textTheme.copyWith(
                     headline6: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
             ),

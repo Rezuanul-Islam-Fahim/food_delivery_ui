@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  _buildRestaurants() {
+  Widget _buildRestaurants() {
     List<Widget> restaurantList = [];
     restaurants.forEach((Restaurant restaurant) {
       restaurantList.add(
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 0.8,
               ),
             ),
-            margin: EdgeInsets.symmetric(vertical: 10),
+            margin: EdgeInsets.symmetric(vertical: 5),
             child: Row(
               children: <Widget>[
                 ClipRRect(
@@ -45,15 +45,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     tag: restaurant.name,
                     child: Image(
                       image: AssetImage(restaurant.imgUrl),
-                      width: 130.0,
-                      height: 130.0,
+                      width: 105,
+                      height: 105,
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.all(15.0),
+                    padding: EdgeInsets.only(left: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -61,28 +61,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           restaurant.name,
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 15,
                             fontWeight: FontWeight.w700,
                             letterSpacing: 0.9,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 6.0),
+                        SizedBox(height: 4),
                         RatingStars(restaurant.rating),
-                        SizedBox(height: 6.0),
+                        SizedBox(height: 6),
                         Text(
                           restaurant.address,
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 12,
                             fontWeight: FontWeight.w600,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 6.0),
+                        SizedBox(height: 6),
                         Text(
                           '${restaurant.distance} miles away',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: Colors.grey[700],
                           ),
@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
               'Cart (${user.cart.length})',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
             shape: RoundedRectangleBorder(
@@ -131,7 +131,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 builder: (_) => CartScreen(),
               ),
             ),
-            splashColor: Colors.white38,
+            splashColor: Colors.white24,
+            highlightColor: Colors.white12,
           ),
         ],
         brightness: Brightness.dark,
@@ -139,11 +140,12 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: <Widget>[
           Container(
+            height: 80,
             padding: EdgeInsets.all(20.0),
             child: TextField(
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(
-                  vertical: 10.0,
+                  vertical: 10,
                 ),
                 fillColor: Colors.white,
                 filled: true,
@@ -155,25 +157,34 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(30.0),
                   borderSide: BorderSide(
                     color: Theme.of(context).primaryColor,
-                    width: 0.9,
+                    width: 0.8,
                   ),
                 ),
-                prefixIcon: Icon(Icons.search, size: 25.0),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                  borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor,
+                    width: 1.2,
+                  ),
+                ),
+                prefixIcon: Icon(Icons.search, size: 22),
                 suffixIcon: IconButton(
                   icon: Icon(Icons.clear),
+                  iconSize: 18,
                   onPressed: () {},
                 ),
                 hintText: 'Search Food or Restaurant',
+                hintStyle: TextStyle(fontSize: 14),
               ),
             ),
           ),
           RecentOrders(),
           Padding(
-            padding: EdgeInsets.only(left: 20, top: 20),
+            padding: EdgeInsets.only(left: 15, top: 20),
             child: Text(
               'Restaurants',
               style: TextStyle(
-                fontSize: 21,
+                fontSize: 17,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 1.2,
               ),
@@ -181,9 +192,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Padding(
             padding: EdgeInsets.only(
-              right: 20.0,
-              left: 20.0,
-              bottom: 10.0,
+              right: 15,
+              left: 15,
+              bottom: 10,
             ),
             child: _buildRestaurants(),
           ),

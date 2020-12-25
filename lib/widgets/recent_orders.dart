@@ -15,18 +15,18 @@ class RecentOrders extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(left: 20, bottom: 10.0),
+          padding: EdgeInsets.only(left: 15, bottom: 5),
           child: Text(
             'Recent Orders',
             style: TextStyle(
-              fontSize: 21,
+              fontSize: 17,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.2,
             ),
           ),
         ),
         Container(
-          height: 100.0,
+          height: 78,
           child: isLandscape
               ? RecentOrderList(orderContSizeLandscape)
               : RecentOrderList(orderContSizePortrait),
@@ -44,10 +44,10 @@ class RecentOrderList extends StatelessWidget {
   _buildRecentOrders(BuildContext context, Order order) {
     return Container(
       width: MediaQuery.of(context).size.width * containerWidth,
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(50.0),
+        borderRadius: BorderRadius.circular(50),
         border: Border.all(
           color: Colors.grey[300],
           width: 0.8,
@@ -60,10 +60,10 @@ class RecentOrderList extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(50.0),
+                  borderRadius: BorderRadius.circular(50),
                   child: Image(
-                    width: 100.0,
-                    height: 100.0,
+                    width: 75,
+                    height: 75,
                     image: AssetImage(order.food.imgUrl),
                     fit: BoxFit.cover,
                   ),
@@ -78,26 +78,27 @@ class RecentOrderList extends StatelessWidget {
                         Text(
                           order.food.name,
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 15,
                             fontWeight: FontWeight.w700,
                             letterSpacing: 0.9,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 5.0),
+                        SizedBox(height: 3),
                         Text(
                           order.restaurant.name,
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 12,
                             fontWeight: FontWeight.w600,
+                            letterSpacing: 0.6,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 5.0),
+                        SizedBox(height: 4),
                         Text(
                           order.date,
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 11,
                             fontWeight: FontWeight.w600,
                             color: Colors.grey[700],
                           ),
@@ -111,15 +112,18 @@ class RecentOrderList extends StatelessWidget {
             ),
           ),
           Container(
+            width: 40,
+            height: 40,
             decoration: BoxDecoration(
               color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(30.0),
             ),
             margin: EdgeInsets.only(right: 15.0),
             child: IconButton(
-              icon: Icon(Icons.add),
+              padding: EdgeInsets.all(0),
+              icon: Icon(Icons.add_rounded),
               color: Colors.white,
-              iconSize: 30.0,
+              iconSize: 25,
               onPressed: () {},
             ),
           ),
