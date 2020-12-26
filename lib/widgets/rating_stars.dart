@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class RatingStars extends StatelessWidget {
-  final int rating;
+  const RatingStars(this.rating);
 
-  RatingStars(this.rating);
+  final int rating;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class RatingStars extends StatelessWidget {
 
     return Text(
       stars,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 12,
         letterSpacing: 0.8,
       ),

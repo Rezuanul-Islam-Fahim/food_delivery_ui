@@ -3,49 +3,49 @@ import 'package:food_delivery_ui/models/restaurant.dart';
 import 'package:food_delivery_ui/models/order.dart';
 import 'package:food_delivery_ui/models/user.dart';
 
-final Food _steak = Food(
+final Food _steak = const Food(
   imgUrl: 'assets/images/steak.jpg',
   name: 'Steak',
   price: 12.65,
 );
 
-final Food _salmon = Food(
+final Food _salmon = const Food(
   imgUrl: 'assets/images/salmon.jpg',
   name: 'Salmon',
   price: 15.89,
 );
 
-final Food _burger = Food(
+final Food _burger = const Food(
   imgUrl: 'assets/images/burger.jpg',
   name: 'Burger',
   price: 19.23,
 );
 
-final Food _burrito = Food(
+final Food _burrito = const Food(
   imgUrl: 'assets/images/burrito.jpg',
   name: 'Burrito',
   price: 20.43,
 );
 
-final Food _pancake = Food(
+final Food _pancake = const Food(
   imgUrl: 'assets/images/pancakes.jpg',
   name: 'Pancake',
   price: 24.56,
 );
 
-final Food _pasta = Food(
+final Food _pasta = const Food(
   name: 'Pasta',
   imgUrl: 'assets/images/pasta.jpg',
   price: 10.77,
 );
 
-final Food _pizza = Food(
+final Food _pizza = const Food(
   name: 'Pizza',
   imgUrl: 'assets/images/pizza.jpg',
   price: 15.77,
 );
 
-final Food _ramen = Food(
+final Food _ramen = const Food(
   name: 'Ramen',
   imgUrl: 'assets/images/ramen.jpg',
   price: 8.27,

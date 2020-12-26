@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 
 class Food {
-  final String imgUrl;
-  final String name;
-  final double price;
-
-  Food({
+  const Food({
     @required this.imgUrl,
     @required this.name,
     @required this.price,
   });
+
+  final String imgUrl;
+  final String name;
+  final double price;
 }

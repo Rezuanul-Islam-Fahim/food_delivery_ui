@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:food_delivery_ui/data.dart';
 import 'package:food_delivery_ui/models/order.dart';
 
@@ -8,17 +9,14 @@ class RecentOrders extends StatelessWidget {
     final bool isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
 
-    final double orderContSizePortrait = 0.8;
-    final double orderContSizeLandscape = 0.6;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(left: 15, bottom: 5),
-          child: Text(
+          padding: const EdgeInsets.only(left: 15, bottom: 5),
+          child: const Text(
             'Recent Orders',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.2,
@@ -27,9 +25,7 @@ class RecentOrders extends StatelessWidget {
         ),
         Container(
           height: 78,
-          child: isLandscape
-              ? RecentOrderList(orderContSizeLandscape)
-              : RecentOrderList(orderContSizePortrait),
+          child: isLandscape ? RecentOrderList(0.6) : RecentOrderList(0.8),
         ),
       ],
     );
@@ -37,14 +33,14 @@ class RecentOrders extends StatelessWidget {
 }
 
 class RecentOrderList extends StatelessWidget {
+  const RecentOrderList(this.containerWidth);
+
   final double containerWidth;
 
-  RecentOrderList(this.containerWidth);
-
-  _buildRecentOrders(BuildContext context, Order order) {
+  Widget _buildRecentOrders(BuildContext context, Order order) {
     return Container(
       width: MediaQuery.of(context).size.width * containerWidth,
-      margin: EdgeInsets.symmetric(horizontal: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(50),
@@ -70,31 +66,31 @@ class RecentOrderList extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
                           order.food.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w700,
                             letterSpacing: 0.9,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 3),
+                        const SizedBox(height: 3),
                         Text(
                           order.restaurant.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 0.6,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 4),
+                        const SizedBox(height: 4),
                         Text(
                           order.date,
                           style: TextStyle(
@@ -118,10 +114,10 @@ class RecentOrderList extends StatelessWidget {
               color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(30.0),
             ),
-            margin: EdgeInsets.only(right: 15.0),
+            margin: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-              padding: EdgeInsets.all(0),
-              icon: Icon(Icons.add_rounded),
+              padding: const EdgeInsets.all(0),
+              icon: const Icon(Icons.add_rounded),
               color: Colors.white,
               iconSize: 25,
               onPressed: () {},
@@ -135,7 +131,7 @@ class RecentOrderList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       scrollDirection: Axis.horizontal,
       itemCount: user.recentOrders.length,
       itemBuilder: (BuildContext context, int index) {
