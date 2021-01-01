@@ -2,6 +2,8 @@
 
 A simple food delivery app UI for android, ios and web built with dart and flutter.
 
+<img width="80%" src="screenshots/banner.png">
+
 <a href="https://drive.google.com/file/d/1tVStmRpatG_Mz05LOu90ApIuJzlIYWQD/view?usp=sharing"><img src="https://boostapk.com/wp-content/uploads/2020/08/fall-guys-android.png" width=200></a>
 
 ### Support this project
