@@ -8,7 +8,7 @@ A simple food delivery app UI for android, ios and web built with dart and flutt
 
 ### Support this project
 
-[![GitHub stars](https://img.shields.io/github/stars/Rezuanul-Islam-Fahim/food_delivery_ui.svg?style=social&label=Star)](https://github.com/Rezuanul-Islam-Fahim/food_delivery_ui) [![GitHub forks](https://img.shields.io/github/forks/Rezuanul-Islam-Fahim/food_delivery_ui.svg?style=social&label=Fork)](https://github.com/Rezuanul-Islam-Fahim/food_delivery_ui/fork) [![GitHub watchers](https://img.shields.io/github/watchers/Rezuanul-Islam-Fahim/food_delivery_ui.svg?style=social&label=Watch)](https://github.com/Rezuanul-Islam-Fahim/food_delivery_ui)
+[![GitHub stars](https://img.shields.io/github/stars/rezuanul-islam-fahim/food_delivery_ui?style=social)](https://github.com/Rezuanul-Islam-Fahim/food_delivery_ui/stargazers) [![GitHub forks](https://img.shields.io/github/forks/rezuanul-islam-fahim/food_delivery_ui?style=social)](https://github.com/Rezuanul-Islam-Fahim/food_delivery_ui/network/members) [![GitHub watchers](https://img.shields.io/github/watchers/rezuanul-islam-fahim/food_delivery_ui?style=social)](https://github.com/Rezuanul-Islam-Fahim/food_delivery_ui/watchers)
 
 ## Screenshots
 
