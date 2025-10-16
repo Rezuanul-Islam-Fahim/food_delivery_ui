@@ -5,7 +5,7 @@ import 'package:food_delivery_ui/models/food.dart';
 import 'package:food_delivery_ui/widgets/rating_stars.dart';
 
 class RestaurantScreen extends StatelessWidget {
-  const RestaurantScreen(this.restaurant);
+  const RestaurantScreen({required this.restaurant, super.key});
 
   final Restaurant restaurant;
 
@@ -37,7 +37,7 @@ class RestaurantScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  color: Colors.black87.withOpacity(0.7),
+                  color: Color.fromRGBO(33, 33, 33, 0.7),
                 ),
               ),
             ],
@@ -57,42 +57,44 @@ class RestaurantScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                FlatButton(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0,
-                    vertical: 10.0,
-                  ),
-                  color: Theme.of(context).primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                      vertical: 10.0,
+                    ),
+                    backgroundColor: Theme.of(context).primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                   ),
                   child: const Text(
                     'Reviews',
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                     ),
                   ),
-                  splashColor: Colors.white38,
                   onPressed: () {},
                 ),
-                FlatButton(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0,
-                    vertical: 10.0,
-                  ),
-                  color: Theme.of(context).primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                      vertical: 10.0,
+                    ),
+                    backgroundColor: Theme.of(context).primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                   ),
                   child: const Text(
                     'Contact Us',
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                     ),
                   ),
-                  splashColor: Colors.white38,
                   onPressed: () {},
                 ),
               ],
@@ -188,8 +190,8 @@ class RestaurantScreen extends StatelessWidget {
           Stack(
             children: <Widget>[
               isLandscape
-                  ? HeroImage(restaurant, 0.55)
-                  : HeroImage(restaurant, 0.4),
+                  ? HeroImage(restaurant: restaurant, stackHeight: 0.55)
+                  : HeroImage(restaurant: restaurant, stackHeight: 0.4),
               Container(
                 padding: const EdgeInsets.symmetric(
                   vertical: 40.0,
@@ -224,7 +226,7 @@ class RestaurantScreen extends StatelessWidget {
                   const SizedBox(height: 10.0),
                   const Text(
                     'Our Menus',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w800,
                       letterSpacing: 1.2,
@@ -241,12 +243,13 @@ class RestaurantScreen extends StatelessWidget {
                     ),
                     child: GridView.builder(
                       padding: const EdgeInsets.only(top: 5),
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: menuItem,
                       itemBuilder: (BuildContext context, int index) {
                         return _buildMenuItems(restaurant.foods[index]);
                       },
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 20,
                         mainAxisSpacing: 20,
@@ -264,7 +267,8 @@ class RestaurantScreen extends StatelessWidget {
 }
 
 class HeroImage extends StatelessWidget {
-  const HeroImage(this.restaurant, this.stackHeight);
+  const HeroImage(
+      {required this.restaurant, required this.stackHeight, super.key});
 
   final Restaurant restaurant;
   final double stackHeight;

@@ -8,7 +8,7 @@ import 'package:food_delivery_ui/widgets/rating_stars.dart';
 import 'package:food_delivery_ui/models/restaurant.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({this.title, Key key}) : super(key: key);
+  const HomeScreen({required this.title, super.key});
 
   final String title;
 
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => RestaurantScreen(restaurant),
+                builder: (_) => RestaurantScreen(restaurant: restaurant),
               ),
             ),
             child: Container(
@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15.0),
                 border: Border.all(
-                  color: Colors.grey[300],
+                  color: Colors.grey[300] ?? Colors.grey,
                   width: 0.8,
                 ),
               ),
@@ -112,16 +112,19 @@ class HomeScreen extends StatelessWidget {
           onPressed: () {},
         ),
         actions: <Widget>[
-          FlatButton(
+          TextButton(
             child: Text(
               'Cart (${user.cart.length})',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
               ),
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
+            style: TextButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              splashFactory: InkRipple.splashFactory,
             ),
             onPressed: () => Navigator.push(
               context,
@@ -129,8 +132,6 @@ class HomeScreen extends StatelessWidget {
                 builder: (_) => CartScreen(),
               ),
             ),
-            splashColor: Colors.white24,
-            highlightColor: Colors.white12,
           ),
         ],
       ),
@@ -176,11 +177,11 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           RecentOrders(),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, top: 20),
-            child: const Text(
+          const Padding(
+            padding: EdgeInsets.only(left: 15, top: 20),
+            child: Text(
               'Restaurants',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 1.2,
