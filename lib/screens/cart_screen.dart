@@ -4,6 +4,8 @@ import 'package:food_delivery_ui/data.dart';
 import 'package:food_delivery_ui/models/order.dart';
 
 class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     double totalCost = 0;
@@ -54,7 +56,7 @@ class CartScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w600,
-                            color: Colors.black87.withOpacity(0.7),
+                            color: Color.fromRGBO(33, 33, 33, 0.7),
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -126,7 +128,7 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart (${user.cart.length})'),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: ListView.separated(
         itemCount: user.cart.length + 1,
@@ -142,10 +144,10 @@ class CartScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Expanded(
-                      child: const Text(
+                    const Expanded(
+                      child: Text(
                         'Estimated Delivery Time',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
@@ -154,7 +156,7 @@ class CartScreen extends StatelessWidget {
                     ),
                     const Text(
                       '25 min',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
@@ -167,7 +169,7 @@ class CartScreen extends StatelessWidget {
                   children: <Widget>[
                     const Text(
                       'Total Cost',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
@@ -206,13 +208,13 @@ class CartScreen extends StatelessWidget {
                 color: Colors.black26,
                 blurRadius: 3.5,
                 spreadRadius: 0.6,
-                offset: Offset(0, -1),
+                offset: const Offset(0, -1),
               ),
             ],
           ),
           child: const Text(
             'Checkout',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.w700,
               color: Colors.white,

@@ -3,10 +3,10 @@ import 'package:food_delivery_ui/models/restaurant.dart';
 
 class Order {
   const Order({
-    this.food,
-    this.date,
-    this.restaurant,
-    this.quantity,
+    required this.food,
+    required this.date,
+    required this.restaurant,
+    required this.quantity,
   });
 
   final Food food;

@@ -4,6 +4,8 @@ import 'package:food_delivery_ui/data.dart';
 import 'package:food_delivery_ui/models/order.dart';
 
 class RecentOrders extends StatelessWidget {
+  const RecentOrders({super.key});
+
   @override
   Widget build(BuildContext context) {
     final bool isLandscape =
@@ -16,7 +18,7 @@ class RecentOrders extends StatelessWidget {
           padding: const EdgeInsets.only(left: 15, bottom: 5),
           child: const Text(
             'Recent Orders',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.2,
@@ -25,7 +27,9 @@ class RecentOrders extends StatelessWidget {
         ),
         Container(
           height: 78,
-          child: isLandscape ? RecentOrderList(0.6) : RecentOrderList(0.8),
+          child: isLandscape
+              ? const RecentOrderList(0.6)
+              : const RecentOrderList(0.8),
         ),
       ],
     );
@@ -33,7 +37,7 @@ class RecentOrders extends StatelessWidget {
 }
 
 class RecentOrderList extends StatelessWidget {
-  const RecentOrderList(this.containerWidth);
+  const RecentOrderList(this.containerWidth, {super.key});
 
   final double containerWidth;
 
@@ -45,7 +49,7 @@ class RecentOrderList extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(50),
         border: Border.all(
-          color: Colors.grey[300],
+          color: Colors.grey[300] ?? Colors.grey,
           width: 0.8,
         ),
       ),
