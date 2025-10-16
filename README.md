@@ -4,7 +4,7 @@ A simple food delivery app UI for android, ios and web built with dart and flutt
 
 <img width="80%" src="screenshots/banner.png">
 
-[![Live Preview on Appetize](https://img.shields.io/badge/Live%20Preview-Appetize.io-2EC4B6?style=for-the-badge&logo=flutter&logoColor=white)](https://appetize.io/app/b_6tuae47vq753swxv7lxnnve36e)
+[![Live Preview on Appetize](https://img.shields.io/badge/Live%20Preview-Appetize.io-2EC4B6?style=for-the-badge&logo=flutter&logoColor=white)](https://appetize.io/app/b_bukfgxjfnbafxovzzxfa5igz3u)
 
 ### Support this project
 
